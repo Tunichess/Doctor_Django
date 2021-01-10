@@ -1,2 +1,2 @@
 # Doctor_Django
-python manage.py runserver
+$$ python manage.py runserver
