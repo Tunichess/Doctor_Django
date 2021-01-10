@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<head>
+   <title>Django Sofiane</title>
+   <link rel="stylesheet" href={% static "css/style.css" %}/>
+</head>
+<body>
+    {% block block1 %}
+    {% endblock %}
+<h1>hello world</h1>
+<div class="djangtwo">
+{% if access_records %}
+<table>
+    <thread>
+        <th>Site Name</th>
+        <th>Date Accessed</th>
+    </thread>
+{% for acc in access_records %}
+<tr>
+    <td>{{acc.name}}</td>
+    <td>{{acc.date}}</td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+    <p>No Access Records Found!</p>
+{% endif %}
+
+</div>
+</body>

@@ -1,0 +1,14 @@
+{% extends "first_app/base.html"%}
+{% block body_block1 %}
+<h1>{% if not form.instance.pk %}
+    create Personne
+    {% else %}
+    Update Personne
+    {% endif %}
+</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+{% endblock %}

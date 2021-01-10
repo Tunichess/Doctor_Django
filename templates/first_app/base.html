@@ -1,0 +1,28 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <ul>
+            <h1>{{first_name}} {{last_name}} {{state}}</h1>
+            <li><a href="{% url 'admin:index'%}">Admin</a></li>
+            <li><a href="{% url 'first_app:register'%}">Register</a></li>
+            <li><a href="{% url 'first_app:question'%}">Question</a></li>
+            <li><a href="{% url 'first_app:personne_list1'%}">Etudiants inscrites</a></li>
+            <li><a href="{% url 'first_app:personne_list2'%}">Medecins inscrites</a></li>
+            <li><a href="{% url 'first_app:score_list'%}">Score_etudiants</a></li>
+            <li><a href="{% url 'first_app:user'%}">Profile</a></li>
+
+
+            {% if user.is_athenticated%}
+                <li><a class='navbar-link' href="{% url 'logout'%}">Logout</a></li>
+            {% else%}
+            {% endif %}
+            
+        </ul>
+        {% block body_block1 %}
+        {% endblock %}
+        {% block body_block2 %}
+        {% endblock %}
+
+    </body>
+</html>

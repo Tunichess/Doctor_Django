@@ -1,0 +1,22 @@
+<table border="1" style="width:50%">
+    <thead>
+      <tr>
+        <th>First_name</th>
+        <th>Last_name</th>
+        <th>Score</th>
+        <th>Resultat</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for score in score_list %}
+      <tr>
+        <td><h5><center>{{score.first_name}}</center></h5></td>
+        <td><h5><center>{{score.last_name}}</center></h5></td>
+        <td><h5><center>{{score.score}}</center></h5></td>
+        <td><h5><center>{{score.resultat}}</center></h5></td>
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>

@@ -1,0 +1,21 @@
+{% extends "first_app/table.html"%}
+{% block body_block2 %}
+<div class="jumbotron">  
+    <h1>Welcome to the personne Detail page</h1>
+    <h2>Personne details:</h2>
+    <p>First_name: {{personne_detail.first_name}}</p>
+    <p>Last_name: {{personne_detail.last_name}}</p>
+    <p>Birthday: {{personne_detail.birthday}}</p>
+    <p>Email: {{personne_detail.email}}</p>
+    <p>Phone_number: {{personne_detail.phone_number}}</p>
+    <p>State: {{personne_detail.state}}</p>
+
+    <h3> Personnes:</h3>
+    {% for student in personne_detail.students.all %}
+        <p>{{student.last_name}} who is {{student.age}} years old.</p>  
+    {% endfor%}
+</div>
+<div class="container">
+    <p><a class='btn btn-warning' href="{% url 'first_app:update' pk=personne_detail.pk %}">Update</a></p>
+</div>
+{% endblock %}

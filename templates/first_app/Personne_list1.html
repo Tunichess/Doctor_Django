@@ -1,0 +1,28 @@
+{% extends 'table.html'%}
+{% block student_list %}
+<table border="1" style="width:50%">
+ 
+    <thead>
+      <tr>
+        <th>First_name</th>
+        <th>Last_name</th>
+        <th>Birthday</th>
+        <th>State</th>
+        <th>Release_date</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for personne in personne_list1 %}
+      <tr>
+        <td><h5><center>{{personne.first_name}}</center></h5></td>
+        <td><h5><center>{{personne.last_name}}</center></h5></td>
+        <td><h5><center>{{personne.birthday}}</center></h5></td>
+        <td><h5><center>{{personne.state}}</center></h5></td>
+        <td><h5><center>{{personne.release_date}}</center></h5></td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  
+  </table>
+{% endblock %}

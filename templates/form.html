@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <div class="container">
+            <form  method="POST">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary " value="Submit">
+            </form>
+        </div>
+        <a href="{% url 'index' %}"> Index page</a>
+    </body>
+</html>

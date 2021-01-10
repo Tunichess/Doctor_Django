@@ -1,0 +1,273 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href={% static "assets/first_app/img/apple-icon.png" %}>
+    <link rel="icon" type="image/png" href={% static "assets/first_app/img/favicon.ico" %}>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>DOCTORS</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href={% static "assets/first_app/css/bootstrap.min.css" %} rel="stylesheet" />
+    <link href={% static "assets/first_app/css/light-bootstrap-dashboard.css" %} rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href={% static "assets/first_app/css/demo.css" %} rel="stylesheet" />
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image={% static "assets/first_app/img/sidebar-5.jpg" %}>
+
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="sidebar-wrapper" style="background-color: #a64dff">
+                <div class="logo">
+                    <a href="http://www.creative-tim.com"  class="simple-text">
+                        DOCTORS
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li >
+                        <a class="nav-link" href="{% url 'first_app:user2'%}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'first_app:start'%}">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Questions</p>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+              <div class="container-fluid">
+                  <a class="navbar-brand" href=""> User </a>
+                  <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-bar burger-lines"></span>
+                      <span class="navbar-toggler-bar burger-lines"></span>
+                      <span class="navbar-toggler-bar burger-lines"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                      <ul class="nav navbar-nav mr-auto">
+                      </ul>
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item">
+                              <a class="nav-link" href="{% url 'first_app:user2' %}">
+                                  <span class="no-icon">Account</span>
+                              </a>
+                          </li>
+
+                          <li class="nav-item">
+                              <a class="nav-link" href="{% url 'first_app:login' %}">
+                                  <span class="no-icon">Log out</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+            <!-- End Navbar -->
+
+                        <!-- End Navbar -->
+                        <div class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card strpied-tabled-with-hover " style="background-color: #cc99ff" >
+                                            <div class="card-body table-full-width table-responsive" style="float:left; margin-left:20px;">
+
+                                              <h1>Votre score est {{score}}/25</h1>
+                                              <h1>{{reussi}}</h1>
+                                              <h1>{{timePassed}}</h1>
+
+                                              
+                                              <div class="jumbotron">  
+                                                  <h2>Student score :</h2>
+                                                  <p>Personne first name: {{first_name}}</p>
+                                                  <p>Personne last name: {{last_name}}</p>
+                                                  <p>score: {{score}}</p>
+                                                  <p>resultat: {{resultat}}</p>
+                                              </div>
+                                              <div class="row lead">
+                                                  <center><p>Give a rate</p>
+                                                  <div id="stars-existing" class="starrr" data-rating='5'></div>
+                                                  You gave a rating of <span id="count-existing">5</span> star(s)
+                                                  </center>
+                                              </div>
+                                                  
+                                            </div>
+                                        </div>
+                                    </div>                                        
+                                </div>
+                            </div>
+                        </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav>
+
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="http://www.grunge.com.tn">Grunge</a>, made with love for a better web
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+<!--   Core JS Files   -->
+<script src={% static "assets/first_app/js/core/jquery.3.2.1.min.js" %} type="text/javascript"></script>
+<script src={% static "assets/first_app/js/core/popper.min.js" %} type="text/javascript"></script>
+<script src={% static "assets/first_app/js/core/bootstrap.min.js" %} type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src={% static "assets/first_app/js/plugins/bootstrap-switch.js" %}></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE" ></script>
+<!--  Chartist Plugin  -->
+<script src={% static "assets/first_app/js/plugins/chartist.min.js" %}></script>
+<!--  Notifications Plugin    -->
+<script src={% static "assets/first_app/js/plugins/bootstrap-notify.js" %}></script>
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src={% static "assets/first_app/js/light-bootstrap-dashboard.js" %} type="text/javascript"></script>
+<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+<script src={% static "assets/first_app/js/demo.js" %}></script>
+<script>
+  var __slice = [].slice;
+
+(function($, window) {
+var Starrr;
+
+Starrr = (function() {
+  Starrr.prototype.defaults = {
+    rating: void 0,
+    numStars: 5,
+    change: function(e, value) {}
+  };
+
+  function Starrr($el, options) {
+    var i, _, _ref,
+      _this = this;
+
+    this.options = $.extend({}, this.defaults, options);
+    this.$el = $el;
+    _ref = this.defaults;
+    for (i in _ref) {
+      _ = _ref[i];
+      if (this.$el.data(i) != null) {
+        this.options[i] = this.$el.data(i);
+      }
+    }
+    this.createStars();
+    this.syncRating();
+    this.$el.on('mouseover.starrr', 'span', function(e) {
+      return _this.syncRating(_this.$el.find('span').index(e.currentTarget) + 1);
+    });
+    this.$el.on('mouseout.starrr', function() {
+      return _this.syncRating();
+  });
+    this.$el.on('click.starrr', 'span', function(e) {
+      return _this.setRating(_this.$el.find('span').index(e.currentTarget) + 1);
+    });
+    this.$el.on('starrr:change', this.options.change);
+  }
+
+  Starrr.prototype.createStars = function() {
+    var _i, _ref, _results;
+
+    _results = [];
+    for (_i = 1, _ref = this.options.numStars; 1 <= _ref ? _i <= _ref : _i >= _ref; 1 <= _ref ? _i++ : _i--) {
+      _results.push(this.$el.append("<span class='glyphicon .glyphicon-star-empty'></span>"));
+    }
+    return _results;
+  };
+
+  Starrr.prototype.setRating = function(rating) {
+    if (this.options.rating === rating) {
+      rating = void 0;
+    }
+    this.options.rating = rating;
+    this.syncRating();
+    return this.$el.trigger('starrr:change', rating);
+  };
+
+  Starrr.prototype.syncRating = function(rating) {
+    var i, _i, _j, _ref;
+
+    rating || (rating = this.options.rating);
+    if (rating) {
+      for (i = _i = 0, _ref = rating - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+        this.$el.find('span').eq(i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+      }
+    }
+    if (rating && rating < 5) {
+      for (i = _j = rating; rating <= 4 ? _j <= 4 : _j >= 4; i = rating <= 4 ? ++_j : --_j) {
+        this.$el.find('span').eq(i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+      }
+    }
+    if (!rating) {
+      return this.$el.find('span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+    }
+  };
+
+  return Starrr;
+
+})();
+return $.fn.extend({
+  starrr: function() {
+    var args, option;
+
+    option = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+    return this.each(function() {
+      var data;
+
+      data = $(this).data('star-rating');
+      if (!data) {
+        $(this).data('star-rating', (data = new Starrr($(this), option)));
+      }
+      if (typeof option === 'string') {
+        return data[option].apply(data, args);
+      }
+    });
+  }
+});
+})(window.jQuery, window);
+
+$(function() {
+return $(".starrr").starrr();
+});
+
+$( document ).ready(function() {
+    
+$('#stars').on('starrr:change', function(e, value){
+  $('#count').html(value);
+});
+
+$('#stars-existing').on('starrr:change', function(e, value){
+  $('#count-existing').html(value);
+});
+});
+</script>
+
+</html>

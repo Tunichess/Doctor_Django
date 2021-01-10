@@ -1,0 +1,458 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href={% static "assets/first_app/img/apple-icon.png" %}>
+    <link rel="icon" type="image/png" href={% static "assets/first_app/img/favicon.ico" %}>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>DOCTORS</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href={% static "assets/first_app/css/bootstrap.min.css" %} rel="stylesheet" />
+    <link href={% static "assets/first_app/css/light-bootstrap-dashboard.css" %} rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href={% static "assets/first_app/css/demo.css" %} rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image={% static "assets/first_app/img/sidebar-5.jpg" %}>
+
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="sidebar-wrapper" style="background-color: #a64dff">
+                <div class="logo">
+                    <a href="http://www.creative-tim.com"  class="simple-text">
+                        DOCTORS
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li >
+                        <a class="nav-link" href="{% url 'first_app:user2'%}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'first_app:start'%}">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Questions</p>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href=""> User </a>
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="nav navbar-nav mr-auto">
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+
+                        <!-- End Navbar -->
+                        <div class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="card strpied-tabled-with-hover" style="background-color: #cc99ff" >
+                                            <center><h3>QCM Dermatologie</h3></center><br>
+                                            <center><h5>QCM publier par Dr.Prosper</h5></center><br>
+
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                </div>
+                                    <div class="col-md-12">
+                                        <div class="card strpied-tabled-with-hover" style="background-color: #e6ccff">
+                                            <div class="card-body table-full-width table-responsive">
+                                              <form  id="form" action ="{% url 'first_app:score'%}"  method="POST" style="float:left; margin-left:20px;" >
+                                                {% csrf_token%}
+                                                  <div class="pos" id="app"></div>
+                                                  <h3>Question1:</h3>
+                                                  <h4>1 - Traitement du psoriasis par les rétinoïdes: quelle(s) réponse(s) est(sont) exacte(s)?</h4>
+                                                  <input type="checkbox" name="c11" value=1 > A - Les rétinoïdes sont formellement contre-indiqués chez la femme enceinte<br>
+                                                  <input type="checkbox" name="c12" value=1 > B - Les rétinoïdes sont contre-indiqués chez l'insuffisant hépatique<br>
+                                                  <input type="checkbox" name="c13" value=1 > C - La posologie habituelle est de 1mg/kg/jour<br>
+                                                  <input type="checkbox" name="c14" value=0 > D - Les rétinoïdes sont contre-indiqués en cas de psoriasis pustuleux<br>
+                                                  <input type="checkbox" name="c15" value=1 > E - Les rétinoïdes peuvent se prescrire en association avec la PUVA-thérapie<br>
+
+                                                  <h3>Question2:</h3>
+                                                  <h4>2 - L'ensemble des examens est normal vous reprenez l interrogatoire et vous découvrez un psoriasis du cuir chevelu. Vous évoquez donc un rhumatisme psoriasique. Sur cette liste d examens quelles réponses positives attendez-vous ?</h4>
+                                                  <input type="checkbox" name="c21" value=1 > A - V.S. élevée<br>
+                                                  <input type="checkbox" name="c22" value=0 > B - Latex Waler Rose positifs<br>
+                                                  <input type="checkbox" name="c23" value=1 > C - HLA B27 positifs<br>
+                                                  <input type="checkbox" name="c24" value=0 > D - Augmentation des alpha 2 globulines<br>
+                                                  <input type="checkbox" name="c25" value=0 > E - Anémie à 8,5 g/dl<br>
+
+
+                                                  <h3>Question3:</h3>
+                                                  <h4>3 - Quelles lésions peuvent être observées au cours du psoriasis?</h4>
+                                                  <input type="checkbox" name="c31" value=1 > A - Erythème<br>
+                                                  <input type="checkbox" name="c32" value=1 > B - Squame<br>
+                                                  <input type="checkbox" name="c33" value=1 > C - Pustule<br>
+                                                  <input type="checkbox" name="c34" value=0 > D - Vésicule<br>
+                                                  <input type="checkbox" name="c35" value=0 > E - Ulcération<br>
+
+
+                                                  <h3>Question4:</h3>
+                                                  <h4>4 - Parmi ces propositions concernant le psoriasis, vous retenez :</h4>
+                                                  <input type="checkbox" name="c41" value=0> A - C'est une éruption érythémato-vésiculeuse<br>
+                                                  <input type="checkbox" name="c42" value=0> B - C'est une dermatose alopéciante<br>
+                                                  <input type="checkbox" name="c43" value=1> C - Il peut atteindre le visage<br>
+                                                  <input type="checkbox" name="c44" value=0> D - Les zones électives sont les plis des coudes et les creux poplités<br>
+                                                  <input type="checkbox" name="c45" value=1> E - Il peut se compliquer de pustules<br>
+
+                                                  <h3>Question5:</h3>
+                                                  <h4>5 - La plaque de psoriasis est caractérisée par : </h4>
+                                                  <input type="checkbox" name="c51" value=0> A - Son manque de limitation<br>
+                                                  <input type="checkbox" name="c52" value=1 > B - Sa desquamation importante<br>
+                                                  <input type="checkbox" name="c53" value=0 > C - Sa vésiculation<br>
+                                                  <input type="checkbox" name="c54" value=0 > D - Son infiltration profonde<br>
+                                                  <input type="checkbox" name="c55" value=0 > E - Sa localisation préférentielle sur le visage<br>
+
+
+                                                  <h3>Question6:</h3>
+                                                  <h4>6 - Un psoriasis peut se compliquer de :</h4>
+                                                  <input type="checkbox" name="c61" value=1 > A - Une érythrodermie,<br>
+                                                  <input type="checkbox" name="c62" value=1 > B - Survenue de pustules amicrobiennes<br>
+                                                  <input type="checkbox" name="c63" value=0 > C - Une atteinte rénale<br>
+                                                  <input type="checkbox" name="c64" value=1 > D - Un rhumatisme<br>
+                                                  <input type="checkbox" name="c65" value=0 > E - Une transformation néoplasique<br>
+
+                                                  <h3>Question7:</h3>
+                                                  <h4>7 - Le psoriasis vulgaire peut se compliquer de :</h4>
+                                                  <input type="checkbox" name="c71" value=1 > A - Erythrodermie<br>
+                                                  <input type="checkbox" name="c72" value=1 > B - Arthropathies<br>
+                                                  <input type="checkbox" name="c73" value=0 > C - Atteinte cardiaque<br>
+                                                  <input type="checkbox" name="c74" value=0 > D - Atteinte rénale<br>
+                                                  <input type="checkbox" name="c75" value=1 > E - Transformation pustuleuse<br>
+
+                                                  <h3>Question8:</h3>
+                                                  <h4>8 - Le psoriasis du cuir chevelu a toutes les caractéristiques suivantes, sauf une. Laquelle ?</h4>
+                                                  <input type="checkbox" name="c81" value=0> A - Il est parfois isolé <br>
+                                                  <input type="checkbox" name="c82" value=0 > B - Il est érythémato-squameux<br>
+                                                  <input type="checkbox" name="c83" value=1 > C - Il est source d'alopécie<br>
+                                                  <input type="checkbox" name="c84" value=0 > D - Il peut siéger à n'importe quel endroit du cuir chevelu<br>
+                                                  <input type="checkbox" name="c85" value=0 > E - Il est parfois prurigineux<br>
+
+                                                  <h3>Question9:</h3>
+                                                  <h4>9 - Quel(s) traitement(s) préconisez-vous pour des lésions de psoriasis limitées aux coudes et aux genoux :
+                                                  </h4>
+                                                  <input type="checkbox" name="c91" value=0> A - Puvathérapie<br>
+                                                  <input type="checkbox" name="c92" value=1> B - Corticoïdes locaux<br>
+                                                  <input type="checkbox" name="c93" value=0 > C - Etrétinate (Tigason®)<br>
+                                                  <input type="checkbox" name="c94" value=0 > D - Méthotrexate intramusculaire<br>
+                                                  <input type="checkbox" name="c95" value=1 > E - Vaseline salicylée<br>
+
+                                                  <h3>Question10:</h3>
+                                                  <h4>10 - Les localisations cutanées habituelles du psoriasis vulgaire sont les genoux, les coudes, la région lombo-sacrée. Quelle autre localisation est très fréquente ? </h4>
+                                                  <input type="checkbox" name="c101" value=0> A - Ongles <br>
+                                                  <input type="checkbox" name="c102" value=1 > B - Cuir chevelu <br>
+                                                  <input type="checkbox" name="c103" value=0 > C - Plis génitaux <br>
+                                                  <input type="checkbox" name="c104" value=0 > D - Région palmaire <br>
+                                                  <input type="checkbox" name="c105" value=0 > E - Muqueuse génitale <br>
+
+
+                                                  <h3>Question11:</h3>
+                                                  <h4>11 - Au cours du psoriasis, on peut observer :</h4>
+                                                  <input type="checkbox" name="c111" value=0 > A - Bulles<br>
+                                                  <input type="checkbox" name="c112" value=1 > B - Plaques érythémato squameuses<br>
+                                                  <input type="checkbox" name="c113" value=0 > C - Vésicules<br>
+                                                  <input type="checkbox" name="c114" value=0 > D - Nodules<br>
+                                                  <input type="checkbox" name="c115" value=1 > E - Pustules<br>
+
+
+                                                  <h3>Question12:</h3>
+                                                  <h4>12 - La plaque de psoriasis est caractérisée par un des signes suivants : </h4>
+                                                  <input type="checkbox" name="c121" value=0 > A - Son manque de limitation<br>
+                                                  <input type="checkbox" name="c122" value=1 > B - Sa desquamation importante<br>
+                                                  <input type="checkbox" name="c123" value=0 > C - Sa vésiculation<br>
+                                                  <input type="checkbox" name="c124" value=0 > D - Son infiltration profonde<br>
+                                                  <input type="checkbox" name="c125" value=0 > E - Sa localisation préférentielle sur le visage<br>
+                                                  <input type="submit" name="VALIDE"> 
+                                                  <!-- Message -->
+                                                    <div id="message"></div>
+                                                    
+                                                    <script> 
+                                                      var myVar = setInterval(function(){ pageRedirect() }, 580000);
+                                                      function pageRedirect(){
+                                                      var delay = 630000; // time in milliseconds
+
+                                                      // Display message
+                                                      document.getElementById("message").innerHTML = "Time Out";
+
+                                                      setTimeout(function(){
+                                                      window.location ="{% url 'first_app:score'%}" ;
+                                                      },delay);
+                                                      document.getElementById("form").submit();
+                                                      }
+
+
+                                                      var startTime, endTime;
+
+                                                      function start() {
+                                                      startTime = new Date();
+                                                      };
+
+                                                      function end() {
+                                                      endTime = new Date();
+                                                      var timeDiff = endTime - startTime; //in ms
+
+                                                      // strip the ms
+                                                      timeDiff /= 1000;
+
+                                                      // get seconds 
+                                                      var seconds = Math.round(timeDiff);
+                                                      console.log(seconds + " seconds");
+                                                      }
+                                                    </script>
+                                            </div>
+                                        </div>
+                                    </div>                                        
+                                </div>
+                            </div>
+                        </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav>
+
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="http://www.grunge.com.tn">Grunge</a>, made with love for a better web
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <style>
+      
+      .pos{
+        position: fixed; 
+        right:60px;
+        top:100px;
+      }
+      body {
+      font-family: sans-serif;
+      display: grid;
+      height: 100vh;
+    }
+    
+    .base-timer {
+      position:relative;
+      width: 150px;
+      height: 150px;
+    }
+    
+    .base-timer__svg {
+      transform: scaleX(-1);
+    }
+    
+    .base-timer__circle {
+      fill: none;
+      stroke: none;
+    }
+    
+    .base-timer__path-elapsed {
+      stroke-width: 10px;
+      stroke: grey;
+    }
+    
+    .base-timer__path-remaining {
+      stroke-width: 10px;
+      stroke-linecap: round;
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition: 1s linear all;
+      fill-rule: nonzero;
+      stroke: currentColor;
+    }
+    
+    .base-timer__path-remaining.green {
+      color: rgb(65, 184, 131);
+    }
+    
+    .base-timer__path-remaining.orange {
+      color: orange;
+    }
+    
+    .base-timer__path-remaining.red {
+      color: red;
+    }
+    
+    .base-timer__label {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 25px;
+      right:25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+    
+    </style>
+    <script>
+
+    // Credit: Mateusz Rybczonec
+    
+    const FULL_DASH_ARRAY = 283;
+    const WARNING_THRESHOLD = 30;
+    const ALERT_THRESHOLD = 10;
+    
+    const COLOR_CODES = {
+      info: {
+        color: "green"
+      },
+      warning: {
+        color: "orange",
+        threshold: WARNING_THRESHOLD
+      },
+      alert: {
+        color: "red",
+        threshold: ALERT_THRESHOLD
+      }
+    };
+    
+    const TIME_LIMIT = 60;
+    let timePassed = 0;
+    let timeLeft = TIME_LIMIT;
+    let timerInterval = null;
+    let remainingPathColor = COLOR_CODES.info.color;
+    
+    document.getElementById("app").innerHTML = `
+    <div class="base-timer">
+      <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g class="base-timer__circle">
+          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+          <path
+            id="base-timer-path-remaining"
+            stroke-dasharray="283"
+            class="base-timer__path-remaining ${remainingPathColor}"
+            d="
+              M 50, 50
+              m -45, 0
+              a 45,45 0 1,0 90,0
+              a 45,45 0 1,0 -90,0
+            "
+          ></path>
+        </g>
+      </svg>
+      <span id="base-timer-label" class="base-timer__label">${formatTime(
+        timeLeft
+      )}</span>
+    </div>
+    `;
+    
+    startTimer();
+    
+    function onTimesUp() {
+      clearInterval(timerInterval);
+    }
+    
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        document.getElementById("base-timer-label").innerHTML = formatTime(
+          timeLeft
+        );
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+    
+        if (timeLeft === 0) {
+          onTimesUp();
+        }
+      }, 1000);
+    }
+    
+    function formatTime(time) {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+    
+      if (seconds < 10) {
+        seconds = `0${seconds}`;
+      }
+    
+      return `${minutes}:${seconds}`;
+    }
+    
+    function setRemainingPathColor(timeLeft) {
+      const { alert, warning, info } = COLOR_CODES;
+      if (timeLeft <= alert.threshold) {
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.remove(warning.color);
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.add(alert.color);
+      } else if (timeLeft <= warning.threshold) {
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.remove(info.color);
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.add(warning.color);
+      }
+    }
+    
+    function calculateTimeFraction() {
+      const rawTimeFraction = timeLeft / TIME_LIMIT;
+      return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+    }
+    
+    function setCircleDasharray() {
+      const circleDasharray = `${(
+        calculateTimeFraction() * FULL_DASH_ARRAY
+      ).toFixed(0)} 283`;
+      document
+        .getElementById("base-timer-path-remaining")
+        .setAttribute("stroke-dasharray", circleDasharray);
+    }
+    
+    </script>
+</body>
+<!--   Core JS Files   -->
+<script src={% static "assets/first_app/js/core/jquery.3.2.1.min.js" %} type="text/javascript"></script>
+<script src={% static "assets/first_app/js/core/popper.min.js" %} type="text/javascript"></script>
+<script src={% static "assets/first_app/js/core/bootstrap.min.js" %} type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src={% static "assets/first_app/js/plugins/bootstrap-switch.js" %}></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE" ></script>
+<!--  Chartist Plugin  -->
+<script src={% static "assets/first_app/js/plugins/chartist.min.js" %}></script>
+<!--  Notifications Plugin    -->
+<script src={% static "assets/first_app/js/plugins/bootstrap-notify.js" %}></script>
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src={% static "assets/first_app/js/light-bootstrap-dashboard.js" %} type="text/javascript"></script>
+<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+<script src={% static "assets/first_app/js/demo.js" %}></script>
+
+</html>

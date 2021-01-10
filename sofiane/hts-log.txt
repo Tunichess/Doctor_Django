@@ -1,0 +1,25 @@
+HTTrack3.49-2+htsswf+htsjava launched on Fri, 28 Feb 2020 15:34:19 at https://github.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://github.com/ -O1 "C:\Users\Sofiane Trabelsi\Desktop\Grunge\first_project\sofiane" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:36:16	Error: 	Exit requested by shell or user
+15:36:20	Error: 	"Not Found" (404) at link https://github.com/signup_check/username?source=homepage&suggest_usernames=true (from https://github.com/)
+15:36:20	Error: 	"Not Found" (404) at link https://github.com/signup_check/email (from https://github.com/)
+15:36:21	Error: 	"Not Found" (404) at link https://github.com/signup_check/username (from https://github.com/)
+15:36:22	Error: 	"Not Found" (404) at link https://github.com/signup_check/username?suggest_usernames=true (from https://github.com/join?source=header-home)
+15:36:23	Warning: 	Found for https://github.com/features/package-registry/
+15:36:23	Warning: 	File has moved from https://github.com/features/package-registry/ to https://github.com/features/packages
+15:36:24	Error: 	Exit requested by shell or user
+15:36:24	Error: 	"" (-1) at link https://github.com/join?source=features-footer (from https://github.com/features)
+15:36:24	Error: 	Exit requested by shell or user
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 5 seconds : 233 links scanned, 226 files written (17631661 bytes overall) [8840839 bytes received at 70726 bytes/sec], 13204051 bytes transferred using HTTP compression in 122 files, ratio 24%, 1.8 requests per connection
+(8 errors, 2 warnings, 0 messages)
+* * MIRROR ABORTED! * *
+The current temporary cache is required for any update operation and only contains data downloaded during the present aborted session.
+The former cache might contain more complete information; if you do not want to lose that information, you have to restore it and delete the current cache.
+This can easily be done here by erasing the hts-cache/new.* files]
